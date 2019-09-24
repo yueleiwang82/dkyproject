@@ -21,13 +21,15 @@ export default {
     init: function() {
       //场景元素获取  
       let container2 = document.getElementById("container2");
+      //场景
       this.scene = new Three.Scene();
+      //相机
       this.camera = new Three.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
-      );
+      ); 
       this.camera.position.z = 20;
       let geometry = new Three.CylinderGeometry( 2, 2, 10, 32 );
       let material = new Three.MeshBasicMaterial( {color: 0x0077aa} );
