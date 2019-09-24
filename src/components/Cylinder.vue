@@ -32,10 +32,10 @@ export default {
       ); 
       this.camera.position.z = 20;
       let geometry = new Three.CylinderGeometry( 2, 2, 10, 32 );
-      let material = new Three.MeshBasicMaterial( {color: 0x0077aa} );
-             
+      let material = new Three.MeshBasicMaterial( {color: 0x0077aa} );      
       this.mesh = new Three.Mesh(geometry, material);
       this.scene.add(this.mesh);
+      //渲染器
       this.renderer = new Three.WebGLRenderer();
       this.renderer.setSize(container2.clientWidth, container2.clientHeight);
       container2.appendChild(this.renderer.domElement);
