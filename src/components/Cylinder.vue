@@ -19,6 +19,7 @@ export default {
   },
   methods: {
     init: function() {
+      //场景元素
       let container2 = document.getElementById("container2");
       this.scene = new Three.Scene();
       this.camera = new Three.PerspectiveCamera(
