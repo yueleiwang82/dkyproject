@@ -8,7 +8,6 @@
 <script>
 import * as Three from "Three";
 export default {
-  
   data() {
     return {
       camera: null,
