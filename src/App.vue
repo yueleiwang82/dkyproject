@@ -10,7 +10,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* 全局自定义的css样式 */
+@import './styles/index.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

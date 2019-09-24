@@ -4,6 +4,7 @@
     <div id="container"></div>
     <test-a></test-a>
     <cylinder></cylinder>
+    <transfer :options="options" :title='title' :showContentOne='valueType' :moveButtonStyle='buttonstlye' :ThreeShow='Threeshow' :titleOne='titleOne' :titleTwo='titleTwo' :titleThree='titleThree' @projectOneValue="getvalueOne" @projectTwoValue="getvalueTwo" @projectThreeValue="getvalueThree"></transfer>
   </div>
 </template>
  
@@ -13,19 +14,43 @@ import STLLoader from "three/examples/js/loaders/STLLoader";//模型导入js
 import OrbitControls from "three/examples/js/controls/OrbitControls";//模型控制js
 import TestA from '@/components/TestA'
 import cylinder from '@/components/Cylinder'
+import transfer from '@/components/transfer'
 export default {
   components: {
     TestA,
-    cylinder
+    cylinder,
+    transfer
   },
   data() {
     return {
+      valueType:'name',
       camera: null,
       scene: null,
       renderer: null,
       mesh: null,
       controls:null,
-      lastDate: new Date()
+      lastDate: new Date(),
+      options:[
+　　　　　　{account: '项目组1',id:'1'},
+　　　　　　{account: '项目组2',id:'2'},
+　　　　　　{account: '项目组3',id:'3'},
+　　　　　　{account: '项目组4',id:'4'},
+　　　　　　{account: '项目组5',id:'5'},
+　　　　],
+      titleOne:'读',
+      titleTwo:'写',
+      titleThree:'无权限',
+      title:'SVN权限分配', 
+      buttonstlye:{
+        width:'60px',
+        'border-radius':'6px',
+        outline:'none',
+        background:'#50bfff',
+        color: '#fff',
+        border: 'none',
+        'font-weight':'700'			    
+      }, 
+      Threeshow:true,           
     };
   },
   methods: {
@@ -48,7 +73,7 @@ export default {
       this.camera.position.x = 0;
       this.camera.position.y = 0;
       //鼠标拖拽
-      this.controls=new Three.OrbitControls(this.camera);
+      //this.controls=new Three.OrbitControls(this.camera);
       let geometry = new Three.SphereGeometry(5, 20, 20);
       let material = new Three.MeshBasicMaterial({
         color: 0x0077aa,
@@ -69,7 +94,16 @@ export default {
       this.lastDate = now;
       this.mesh.rotation.y += delay * 0.001;
       this.renderer.render(this.scene, this.camera);
-    }
+    },
+    getvalueOne(value){	   
+	   console.log('读:',value);
+    },
+      getvalueTwo(value){
+      console.log('写:',value)
+    },
+      getvalueThree(value){
+      console.log('无权限:',value)
+    },    
   },
   mounted() {
     this.init();
