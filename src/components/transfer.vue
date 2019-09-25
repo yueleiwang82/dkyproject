@@ -1,15 +1,15 @@
  <template>
    <div class="mytransWrap" >
-		<form name=frm1 > 
+		<form name=frm1> 
 			<table width="100%" border="0" align="center" cellpadding="1" cellspacing="1"> 
 				<tr> 
-				<td nowrap="nowrap">&nbsp;</td> 
+					<td nowrap="nowrap">&nbsp;</td> 
 					<td width="220px" align="center" style="height:370px;">
 						<span>{{title}}</span>										
 						<select ref="SrcSelect" name="SrcSelect" size=100 v-model="selected"  class="dataSrc" multiple>  
-						  <option v-for="option in options"  v-bind:value="option.id" :key="option.id">  
-							{{ option.account}}  
-						  </option>  
+							<option v-for="option in options"  v-bind:value="option.id" :key="option.id">  
+								{{ option.account}}  
+							</option>  
 						</select> 									
 					</td> 
 					<td width="30px" align="center" style="height:360px;padding-left:10px;">

@@ -7,14 +7,16 @@
     <transfer :options="options" :title='title' :showContentOne='valueType' :moveButtonStyle='buttonstlye' :ThreeShow='Threeshow' :titleOne='titleOne' :titleTwo='titleTwo' :titleThree='titleThree' @projectOneValue="getvalueOne" @projectTwoValue="getvalueTwo" @projectThreeValue="getvalueThree"></transfer>
   </div>
 </template>
- 
 <script>
-import * as Three from "Three";//Three.js引入
-import STLLoader from "three/examples/js/loaders/STLLoader";//模型导入js
-import OrbitControls from "three/examples/js/controls/OrbitControls";//模型控制js
-import TestA from '@/components/TestA'
-import cylinder from '@/components/Cylinder'
-import transfer from '@/components/transfer'
+//Three.js引入
+import * as Three from 'Three';
+//模型导入js
+import STLLoader from 'three/examples/js/loaders/STLLoader';
+//模型控制js
+import OrbitControls from 'three/examples/js/controls/OrbitControls';
+import TestA from '@/components/TestA';
+import cylinder from '@/components/Cylinder';
+import transfer from '@/components/transfer';
 export default {
   components: {
     TestA,

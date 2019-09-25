@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style  scoped>
 /* 全局自定义的css样式 */
 @import './styles/index.css';
 #app {
