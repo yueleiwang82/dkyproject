@@ -1,15 +1,17 @@
 import instance from '@/utils/fetch'
 
-export function loginByUsername(obj) {
+export function loginByUsername (obj) {
   return instance.post(`/api/sys/login`, obj)
 }
-export function logout() {  // 退出
+// 退出
+export function logout () {
   return instance.post(`/api/sys/logout`)
 }
-export function getUserInfo() { //用户信息
+// 用户信息
+export function getUserInfo () {
   return instance.get(`/api/a/sys/user/userInfo`)
 }
-export function getArea() { // 省市区
+// 省市区
+export function getArea () {
   return instance.get(`/api/sys/area/listData`)
 }
-

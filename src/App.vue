@@ -14,7 +14,6 @@ export default {
 <style  scoped lang="less">
 /* 全局自定义的css样式 */
 @import './styles/index.css';
-
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
