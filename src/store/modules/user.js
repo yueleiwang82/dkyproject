@@ -13,7 +13,7 @@ const user = {
     },
     SET_NAME: (state, name) => {
       state.name = name
-    },  
+    },
     SET_AREA: (state, area) => {
       state.area = area
     }
@@ -33,7 +33,7 @@ const user = {
         }
         loginByUsername(obj).then(response => {
           if (response.data.code === 1) {
-            commit('SET_NAME', response.data.data.user.name)             
+            commit('SET_NAME', response.data.data.user.name)
             if (response.data.data.user.name) {
               localStorage.setItem('name', response.data.data.user.name)
             }
@@ -61,6 +61,7 @@ const user = {
       } else {
         return new Promise((resolve, reject) => {
           getUserInfo().then(response => {
+            // eslint-disable-next-line no-unused-vars
             const data = response.data
             commit('SET_NAME', localStorage.getItem('name'))
             resolve(response)
